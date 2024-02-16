@@ -1,0 +1,73 @@
+##PARA ENCONTRAR A GRUPO DE JSON
+
+group=str(input("\nQue grupo desea visualizar? \n")) ##SELECCIÓN DE GRUPO A REVISAR##
+    current_grade_path = f"DATA/notas/notas_{group}.json"
+    notas_grupo=current_grade_path
+    with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+        current_grade = json.load(json_file)
+                    
+    print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO##
+    
+    for i in range(len(current_grade)):
+        current = current_grade[i]
+        print(current,"\n")
+
+####################################################
+
+##Utilizar objeto en especifico del json
+
+group=str(input("\nA que grupo pertenece? \n"))##SELECCIÓN DE GRUPO A REVISAR
+current_grade_path = f"DATA/notas/notas_{group}.json"
+notas_grupo=current_grade_path
+with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+    current_grade = json.load(json_file)
+
+identific=int(input("\nCual es su identificacion? \n")) ##BUSCAR E IMPRIMIR CAMPER##
+for i in range(len(current_grade)):
+    grades=current_grade[i]
+    if grades["id"]==identific:
+        print(current_grade[i])
+        ##Continuar aqui si se usa mismo dato que se buscó
+
+###################################################
+
+##Actualizar de JSON:
+
+import json
+from os import path
+ 
+filename = 'c:/temp/users.json'
+listObj = []
+ 
+# Check if file exists
+if path.isfile(filename) is False:
+  raise Exception("File not found")
+ 
+# Read JSON file
+
+with open(ruta del json, 'r'(si no es r llore)) as json__file:
+  listObj = json.load(json_file)
+ 
+# Verify existing list
+print(listObj)
+print(type(listObj))
+
+#########Agregar##########
+listObj.append({
+  "llave1": "elemento",
+  "llave2": elemento,
+  "llave3": "elemento"
+})
+
+#######Actualizar########
+dictObj.update({"Age": 12,"Role": "Developer"})
+ 
+# Verify updated list
+print(listObj)
+ 
+with open(filename, 'w') as json_file:
+    json.dump(listObj, json_file, 
+                        indent=4,  
+                        separators=(',',': '))
+ 
+print('Successfully appended to the JSON file')
