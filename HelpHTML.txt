@@ -1,0 +1,127 @@
+========================================
+    HOJA TRAMPA HTML/CSS HECHA POR:
+
+        Daniela Forero
+
+        En colaboración con:
+            - Catalina Mulford
+            - Paula Monroy
+            - Helen Parga
+    <3
+
+====================================================================
+¡IMPORTANTE!
+    - Si se buscar hacer un fondo a la página, NO USAR EL * EN CSS.
+
+    - Si la pagina ya tiene un color de fondo, NO HACE FALTA PONER
+    EL COLOR EN CADA CLASE/ID.
+
+    - NO PONERLE BACKGROUND A UNA IMAGEN O SE VERÁ COMO PARTE DE LA
+    MISMA.
+
+    - SI HAY SVG **REVISAR SI TIENE UN HEIGHT Y WIDTH POR DEFECTO EN
+    SU LÍNEA.
+
+    - Si el form no redirecciona, cambia el method="post".
+
+    - Border radius con relativa para que no cambie la figura con
+    menos/mas pixeles.
+
+    - Si usas margins para mover imágenes, una vez fuera de la vista
+    no generan un scrollbar :C.
+====================================================================
+
+
+Para que funcione el @media query:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+Para buscar CSS:
+    <link rel="stylesheet" href="style.css"> 
+
+
+##HYPERVÍNCULOS##
+Para HYPERVÍNCULOS:
+    <a href:"URL.com/.html">
+Para quitar lo azul y linea del vínculo:
+    style="color: inherit; text-decoration: none"
+    Donde inherit deja color normal y txt deco quita barra baja
+
+
+##MEDIA QUERY/
+Ver en cel(si permiten):
+    Ubuntu: En terminar escribir ip addr y escribir desde google en
+    celular:
+        (Ip frente a inet):Número de puerto(5500)
+
+    Windows: En terminal escribir ipconfig y escribir la IPv4 desde
+    google en celular:
+        IPv4:Número de puerto(5500)
+
+
+Centrar hori y verti:
+    CSS/<style>:
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;}
+
+
+Input RADIO si +1 opción:
+    2 opciones, 1 elegible
+    <div>
+        <input type="radio">
+        <div>
+            <p>Colegios Privados</p> 
+        </div>
+
+        <input type="radio">
+        <div>
+            <p>Colegios Privados</p> 
+        </div>
+    </div>
+
+
+##BACKGROUND##
+Gradientes para background:
+    Los porcentajes indican hasta donde va, si son iguales no hay gradient entre ellos 2
+    
+    CSS/<style>:
+        .class/#id{
+        background: linear-gradient(#ff0099 20%,#ffb42a 70%,#ffffff 70%,#0000ff 90%)}
+Otros...
+    no-repeat hace que el fondo no se repita
+
+    background-size: cover 
+    hará que la imagen llene la pag cambiando su tamaño con responsive y
+    si es menor a su tamaño se quedara quieta.
+        ampliar= adapta
+        reducir=recortarse
+    
+
+##ANIMACIONES##
+Animaciones asignar:
+    CSS/<style>:
+    .class/#id{
+        animation: (primera especificación d segundos es duración) (segundoa especificación d seg es retraso)
+            (Nombre de la animacion de keyframes)
+            (los ease hacen que se realice rápido un momento de la animacion)
+    }
+En keyframe:
+    Se pueden usar tanto como % como segundos(s) para su proceso
+    ¡RECUERDA LOS SEGUNDOS EN ASIGNAR!
+        @keyframe Nombre_Animación{
+            0%{
+                opacity: %;
+                                         X=ancho     Y=Largo
+                transform: scaleY(%); ¡X y Y de plano carteciano!
+
+                                        top, left, right, bottom
+                top: #vi  ¡Hará que se translade(Permite negativos)!
+
+                color: #hex ¡Cambia color con animación
+            }
+            100%{
+
+            }
+        }
