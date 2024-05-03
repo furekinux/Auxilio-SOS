@@ -26,3 +26,14 @@ function displayHero(data){
         LukeInfo.innerHTML = ``
     }
 }
+
+
+# APPEND CHILD
+let cardImg = document.getElementById("cards")
+        if(data.response === "error"){
+            cardImg.innerHTML=`<p>Error</p>`
+        } else{
+            let imgcard = document.createElement("img");
+            imgcard.src = card.images.svg
+
+            cardImg.appendChild(imgcard);
