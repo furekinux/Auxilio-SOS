@@ -1,0 +1,28 @@
+# BUSCAR DE UN API
+function fetchLucke(){
+    let xhr = new XMLHttpRequest();
+    let url = "link"
+    xhr.open("GET",url,true);
+    xhr.onreadystatechange = function(){
+        if(this.readyState === 4 && this.status === 200){
+            let response = JSON.parse(this.responseText);
+            console.log(response)
+            displayHero(response)
+
+        } else if(this.readyState == 4){
+            console.log("Error :(",this.statusText)
+        }
+    }
+    xhr.send();
+}
+
+
+# LEER DE UN API
+function displayHero(data){
+    let LukeInfo = document.getElementById("lukeInfo");
+    if (data.response === "error"){
+        LukeInfo.innerHTML = `<p>Error: ${data.error}</p>`
+    } else{
+        LukeInfo.innerHTML = ``
+    }
+}
