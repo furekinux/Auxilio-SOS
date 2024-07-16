@@ -1,14 +1,19 @@
 <h1 align='center'>
 ${\color{#f5882a}My \color{#2a82f5}SQL🐬 \space \color{#f5452a}Cheat \space Sheet}$
 </h1>
-<p align='center'>Hoja trampa para filtro de MySQL, ⚠️SOLAMENTE UTILIZAR CUANDO SEA PERMITIDO⚠️</p>
+<p align='center'>Hoja trampa para filtro o alguna evaluación de MySQL ⚠️SOLAMENTE UTILIZAR CUANDO SEA PERMITIDO⚠️</p>
 <p align='center'><b>Si piensa utilizarla en un repositorio ajeno, al menos de créditos :)</b></p>
 
 ## ${\color{#f5882a}In \color{#2a82f5}dex}$
 - [Creación de BBDD](#crear)
 - [CRUD](#crud)
+- [Funciones](#funciones)
+- [Procedmientos](#procedmientos)
+- [Triggers y Events](#trigger_events)
+- [Bonus!](#bonus)
 
-## ${\color{#f5882a}Creación \space \color{#2a82f5}de \space \color{#f5452a}BBDD}$ <a name="crear"></a>
+<a name="crear"></a>
+## ${\color{#f5882a}Creación \space \color{#2a82f5}de \space \color{#f5452a}BBDD}$ 
 <p>En este apartado se hará una breve explicación de los pasos fundamentales para la creación de una base de datos en MySQL. Adicionalmente se darán tips para recordar a la hora de crear una.</p>
 
 <li><b>Creación y utilización de base de datos:</b></li>
@@ -23,19 +28,137 @@ USE NombreBBDD;
 ```sql
 CREATE TABLE NombreTabla(
   id int primary key auto_increment not null,
+  id_externa int not null,
+  for
   nombre varchar(45) not null
 -- Agregar más atributos a gusto separados por coma (,)
 );
 ```
 
-<li><b>Creación de usuarios</b></li>
+<li><b>Creación de usuarios:</b></li>
 
 ```sql
 CREATE user 'nombre_usuario'@'direccion_ip' IDENTIFIED BY 'contraseña';
 ```
 
-## ${\color{#f5882a}C\color{#2a82f5}R\color{#f5452a}U\color{#f5882a}D}$ <a name="crud"></a>
+<a name="crud"></a>
+## ${\color{#f5882a}C\color{#2a82f5}R\color{#f5452a}U\color{#f5882a}D}$ 
+### En este apartado se hará revisición de los 
 
+<a name="funciones"></a>
+## ${\color{#f5882a}Fun\color{#2a82f5}cio\color{#f5452a}nes}$
+### Una función es un conjunto de acciones que se realizan una vez llamada.
+<li><b>Creación de funciones:</b></li>
 
+```sql
+delimiter //
+create function nombre_funcion(parametro1 varchar(12), parametro2 int) -- Parámetros deben tener un tipo de dato
+returns varchar(255) deterministic -- El tipo de dato que será la respuesta de la ejecución
+begin
+  -- Proceso que se realiza para mostrar una respuesta
+  return "Hello world";
+end//
+delimiter ;
+```
+<li><b>Llamar funciones:</b></li>
 
-## ${\color{#f5882a}Triggers \space\color{#2a82f5}y \space\color{#f5452a}Events}$ <a name="trieve"></a>
+```sql
+select nombre_funcion();
+-- En este caso se deja el espacio de parámetros en blanco.
+-- Retorna la respuesta: Hello world
+```
+<p align="center">
+<img src="https://i.imgur.com/b4zTkHn.png"></img>
+</p>
+
+<li><b>Borrar funciones:</b></li>
+
+```sql
+drop function nombre_funcion;
+```
+
+<a name="procedmientos"></a>
+## ${\color{#f5882a}Proc\color{#2a82f5}edim\color{#f5452a}ientos}$
+### Un procedimiento es una serie de pasos que se ejecutan cada que se llama.
+
+<li><b>Creación de procedimientos:</b></li>
+
+```sql
+delimiter //
+create procedure nombre_procedimiento(in dato1 varchar(100), in dato2 decimal(10,2)) -- "IN" referencia un parametro
+                                                                                      -- Puede tener o no(depende)
+begin
+	-- Proceso que se realiza, ya sea CRUD, etc.
+end //
+delimiter ;
+```
+
+<li><b>Llamar procedimientos:</b></li>
+Ejemplo:
+
+```sql
+create table tabla1(
+	id int auto_increment primary key,
+	nombre varchar(20)
+);
+
+delimiter //
+create procedure nombre_procedimiento()
+begin
+  insert into tabla1(nombre) values ("Hello world");
+
+end//
+delimiter ;
+```
+
+```sql
+call nombre_procedimiento();
+-- En este caso se deja el espacio de parámetros en blanco.
+-- Inserta el dato especificado en la tabla
+
+select * from tabla1;
+-- Verificar cambios
+```
+<p align="center">
+<img src="https://i.imgur.com/bC0V95b.png"></img>
+</p>
+
+<li><b>Borrar procedimientos:</b></li>
+
+```sql
+drop procedure nombre_funcion;
+```
+
+<a name="trigger_events"></a>
+## ${\color{#f5882a}Triggers \space\color{#2a82f5}y \space\color{#f5452a}Events}$
+
+### Un trigger representa un proceso que se realiza antes o después de una determinada acción!
+<li><b>Creación de un Trigger:</b></li>
+
+```sql
+delimiter //
+create trigger nombre_trigger
+after delete on city -- Ejecuta luego/antes de acción [CUANDO(before,after)]
+for each row
+begin
+	-- Proceso que se realiza, ya sea CRUD, etc.
+end //
+delimiter ;
+```
+
+### Un evento representa un proceso que se realiza cada cierto tiempo especificado!
+<li><b>Creación de un Event:</b></li>
+
+```sql
+delimiter //
+create event if not exists nombre_evento
+on schedule every 1 week -- CADA UNA SEMANA
+do
+begin
+	-- Proceso que se realiza, ya sea CRUD, etc.
+end //
+delimiter ;
+```
+
+<a name="bonus"></a>
+## ${\color{#f5882a}Bonus\space\color{#2a82f5}Info}$
