@@ -43,7 +43,18 @@ CREATE user 'nombre_usuario'@'direccion_ip' IDENTIFIED BY 'contraseña';
 
 <a name="crud"></a>
 ## ${\color{#f5882a}C\color{#2a82f5}R\color{#f5452a}U\color{#f5882a}D}$ 
-### En este apartado se hará revisición de los 
+### En este apartado se hará revisición de los distintos métodos de realizar funciones de CRUD(Create, Read, Update, Delete) dentro de una base de datos.
+
+### ${\color{#358c4c}CREATE}$ 
+<li><b>Creación de tablas fue vista en el anterior listado</b></li>
+<li><b>Creación Inserción de datos:</b></li>
+
+
+### ${\color{#f5882a}READ}$ 
+
+### ${\color{#2a82f5}UPDATE}$ 
+
+### ${\color{#f5452a}DELETE}$ 
 
 <a name="funciones"></a>
 ## ${\color{#f5882a}Fun\color{#2a82f5}cio\color{#f5452a}nes}$
