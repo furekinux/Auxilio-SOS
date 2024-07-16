@@ -28,7 +28,14 @@ CREATE TABLE NombreTabla(
 );
 ```
 
+<li><b>Creación de usuarios</b></li>
+
+```sql
+CREATE user 'nombre_usuario'@'direccion_ip' IDENTIFIED BY 'contraseña';
+```
 
 ## ${\color{#f5882a}C\color{#2a82f5}R\color{#f5452a}U\color{#f5882a}D}$ <a name="crud"></a>
+
+
 
 ## ${\color{#f5882a}Triggers \space\color{#2a82f5}y \space\color{#f5452a}Events}$ <a name="trieve"></a>
