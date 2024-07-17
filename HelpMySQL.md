@@ -49,12 +49,58 @@ CREATE user 'nombre_usuario'@'direccion_ip' IDENTIFIED BY 'contraseña';
 <li><b>Creación de tablas fue vista en el anterior listado</b></li>
 <li><b>Creación Inserción de datos:</b></li>
 
+```sql
+INSERT into nombre_tabla(dato1, dato2...) values(valor1, valor2...);
+```
 
 ### ${\color{#f5882a}READ}$ 
+<li><b>Lectura de datos:</b></li>
+Una sola tabla
+
+```sql
+SELECT * from nombre_tabla where dato1=valor1;
+```
+
+Multitabla con join
+```sql
+SELECT ta1.*
+from nombre_tabla ta1
+inner join nombre_tabla2 ta2 on ta2.dato1 = ta1.dato1
+where dato1=valor1;
+```
+<p align="center">
+<img width=600 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqwLKkGPVPwYNfe7ONykAx4hNQ4ELsJI4r8umUbwFKWWUXUGlW8bV74hBoa51ZvddjdgwWRHLRgiH2pTFO3IsP-Z17zUKkzXSSxevM0vrLsxgc6D22VwkUxtAYe782UKWngfVr2doUbjhb/s1600/sql+joins+guide+and+syntax.jpg"></img>
+</p>
 
 ### ${\color{#2a82f5}UPDATE}$ 
+<li><b>Actualizar info de una tabla:</b></li>
+⚠️No olvidar el where si solo se va a cambiar un dato en específico⚠️
+
+```sql
+UPDATE nombre_tabla set dato2=valor_nuevo where dato1=valor_especifico;
+```
 
 ### ${\color{#f5452a}DELETE}$ 
+<li><b>Borrar info de una tabla:</b></li>
+⚠️No olvidar el where si solo se va a borrar un dato en específico⚠️
+
+```sql
+DELETE from nombre_tabla where dato1=valor_especifico;
+```
+
+<li><b>Borrar TODA la info de una tabla:</b></li>
+⚠️No olvidar que LITERALMENTE limpia la tabla⚠️
+
+```sql
+TRUNCATE nombre_tabla;
+```
+
+<li><b>Borrar una tabla:</b></li>
+⚠️No olvidar que borra TODA la tabla incluyendo el contenido⚠️
+
+```sql
+DROP table nombre_tabla;
+```
 
 <a name="funciones"></a>
 ## ${\color{#f5882a}Fun\color{#2a82f5}cio\color{#f5452a}nes}$
@@ -173,3 +219,6 @@ delimiter ;
 
 <a name="bonus"></a>
 ## ${\color{#f5882a}Bonus\space\color{#2a82f5}Info}$
+<li><b>Recordar hacer USE de la base de datos antes de cualquier cosa.</b></li>
+<li><b>Cada linea se debe correr para que se ejecute en el programa.</b></li>
+<li><b>Es recomendable que cada uno tenga un identificador único(ID) con AUTO_INCREMENT.</b></li>
