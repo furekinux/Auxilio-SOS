@@ -8,7 +8,7 @@ ${\color{#f5882a}My \color{#2a82f5}SQL🐬 \space \color{#f5452a}Cheat \space Sh
 - [Creación de BBDD](#crear)
 - [CRUD](#crud)
 - [Funciones](#funciones)
-- [Procedmientos](#procedmientos)
+- [Procedimientos](#procedmientos)
 - [Triggers y Events](#trigger_events)
 - [Bonus!](#bonus)
 
