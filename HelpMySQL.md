@@ -114,7 +114,7 @@ returns varchar(255) deterministic -- El tipo de dato que será la respuesta de 
 begin
   -- Proceso que se realiza para mostrar una respuesta
   return "Hello world";
-end//
+end //
 delimiter ;
 ```
 <li><b>Llamar funciones:</b></li>
@@ -164,7 +164,7 @@ create procedure nombre_procedimiento()
 begin
   insert into tabla1(nombre) values ("Hello world");
 
-end//
+end //
 delimiter ;
 ```
 
